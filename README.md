@@ -135,5 +135,5 @@ Este projeto é de uso livre para fins educacionais e pode ser adaptado conforme
 ## 👨‍💻 Autor
 
 **Seu Nome**  
-📧 seu.email@exemplo.com  
+📧 marcosmarcospaulo42@gmai.com
 🔗 [LinkedIn](www.linkedin.com/in/marcos-paulo-429a361b7) | [GitHub](https://github.com/MarckusP)
