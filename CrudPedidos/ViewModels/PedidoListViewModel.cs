@@ -34,6 +34,7 @@ namespace CrudPedidos.ViewModels
         public ICommand ExcluirCommand { get; }
         public ICommand DetalharCommand { get; }
         public ICommand FiltrarCommand { get; }
+        public ICommand LimparCommand { get; }
 
 
         public PedidoListViewModel(PedidoService service, PessoaService pessoaService, ProdutoService produtoService, Pessoa pessoa = null)
@@ -49,6 +50,11 @@ namespace CrudPedidos.ViewModels
             ExcluirCommand = new RelayCommand(_ => Excluir());
             FiltrarCommand = new RelayCommand(_ => Filtrar());
             AtualizarCommand = new RelayCommand(_ => Carregar());
+            LimparCommand = new RelayCommand(() =>
+            {
+                FiltroStatus = null;
+                Carregar();
+            });
 
             Carregar();
         }

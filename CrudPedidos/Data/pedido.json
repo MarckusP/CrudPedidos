@@ -20,5 +20,36 @@
     "StatusDisponiveis": [
       3
     ]
+  },
+  {
+    "Id": 2,
+    "PessoaId": 2,
+    "PessoaNome": "Magnata",
+    "DataVenda": "2025-10-30T13:47:07.8716791-03:00",
+    "FormaPagamento": 0,
+    "Status": 0,
+    "Itens": [
+      {
+        "Quantidade": 2,
+        "ValorUnitario": 450.0,
+        "ProdutoId": 2,
+        "ProdutoNome": "Lente",
+        "ProdutoCodigo": "20",
+        "ValorTotal": 900.0
+      },
+      {
+        "Quantidade": 1,
+        "ValorUnitario": 51.97,
+        "ProdutoId": 1,
+        "ProdutoNome": "Oculos",
+        "ProdutoCodigo": "10",
+        "ValorTotal": 51.97
+      }
+    ],
+    "ValorTotal": 951.97,
+    "StatusDisponiveis": [
+      0,
+      1
+    ]
   }
 ]

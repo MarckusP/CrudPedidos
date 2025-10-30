@@ -142,8 +142,6 @@ namespace CrudPedidos.ViewModels
             CarregarFiltrado();
         }
 
-
-
         private void ExcluirProduto()
         {
             if (Selected == null) return;

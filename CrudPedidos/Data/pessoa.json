@@ -5,5 +5,12 @@
     "Cpf": "61852629320",
     "Status": "A",
     "StatusDescricao": "Ativo"
+  },
+  {
+    "Id": 2,
+    "Nome": "Magnata",
+    "Cpf": "49449929041",
+    "Status": "A",
+    "StatusDescricao": "Ativo"
   }
 ]
