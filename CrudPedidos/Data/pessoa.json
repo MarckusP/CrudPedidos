@@ -1,0 +1,9 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Perfil teste",
+    "Cpf": "61852629320",
+    "Status": "I",
+    "StatusDescricao": "Inativo"
+  }
+]

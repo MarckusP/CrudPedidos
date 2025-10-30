@@ -1,0 +1,82 @@
+<Window x:Class="CrudPedidos.Views.PedidoFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrudPedidos.Models"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Pedido" Height="560" Width="900" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="StatusPedidoEnum"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:StatusPedido"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+			<TextBlock Text="Pessoa:" VerticalAlignment="Center" Margin="0,0,6,0" />
+			<ComboBox Width="260" ItemsSource="{Binding Pessoas}" SelectedItem="{Binding PessoaSelecionada}" DisplayMemberPath="Nome" />
+			<TextBlock Text="Forma de Pagamento:" VerticalAlignment="Center" Margin="16,0,6,0" />
+			<ComboBox Width="160" SelectedItem="{Binding FormaPagamento}">
+				<ComboBoxItem Content="Dinheiro" />
+				<ComboBoxItem Content="Cartao" />
+				<ComboBoxItem Content="Boleto" />
+			</ComboBox>
+            <TextBlock Text="Status:" VerticalAlignment="Center" Margin="16,0,6,0" />
+            <ComboBox Width="140"
+					  ItemsSource="{Binding Source={StaticResource StatusPedidoEnum}}"
+					  SelectedItem="{Binding Status, Mode=TwoWay}" />
+        </StackPanel>
+
+		<GroupBox Header="Itens" Grid.Row="1">
+			<DockPanel>
+				<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
+					<TextBlock Text="Produto:" VerticalAlignment="Center" Margin="0,0,6,0" />
+					<ComboBox Width="280" ItemsSource="{Binding Produtos}" SelectedItem="{Binding ProdutoSelecionado}" DisplayMemberPath="Nome" />
+					<TextBlock Text="Qtd:" VerticalAlignment="Center" Margin="12,0,6,0" />
+					<TextBox Width="60" Text="{Binding Quantidade, UpdateSourceTrigger=PropertyChanged}" />
+					<Button Content="Adicionar" Width="90" Margin="12,0,0,0" Command="{Binding AdicionarItemCommand}" />
+				</StackPanel>
+				<DataGrid Grid.Row="1" AutoGenerateColumns="False" Margin="8" ItemsSource="{Binding Itens}">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Código" Binding="{Binding ProdutoCodigo}" Width="120" />
+						<DataGridTextColumn Header="Produto" Binding="{Binding ProdutoNome}" Width="*" />
+						<DataGridTextColumn Header="Unitário" Binding="{Binding ValorUnitario, StringFormat={}{0:N2}}" Width="120" />
+						<DataGridTextColumn Header="Qtd" Binding="{Binding Quantidade}" Width="80" />
+						<DataGridTextColumn Header="Total" Binding="{Binding ValorTotal, StringFormat={}{0:N2}}" Width="120" />
+						<DataGridTemplateColumn Header="">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Content="Remover" Command="{Binding DataContext.RemoverItemCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" />
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</DockPanel>
+		</GroupBox>
+
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
+			<TextBlock Text="Valor Total:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,6,0" />
+			<TextBlock Text="{Binding ValorTotal, StringFormat={}{0:N2}}" VerticalAlignment="Center" />
+		</StackPanel>
+
+		<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button Content="Finalizar" Width="100" Margin="0,10,8,0" Command="{Binding FinalizarCommand}" />
+			<Button Content="Cancelar" Width="100" Margin="0,10,0,0" IsCancel="True" />
+		</StackPanel>
+	</Grid>
+</Window>
+
+

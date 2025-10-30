@@ -1,0 +1,35 @@
+﻿<Window x:Class="CrudPedidos.Views.PedidoDetalheWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detalhe do Pedido" Height="400" Width="600"
+        WindowStartupLocation="CenterOwner">
+
+    <DockPanel Margin="8">
+
+        <!-- Cabeçalho -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBlock Text="Pedido ID:" FontWeight="Bold"/>
+            <TextBlock Text="{Binding PedidoId}" Margin="6,0,0,0"/>
+            <TextBlock Text=" | Cliente:" FontWeight="Bold" Margin="12,0,0,0"/>
+            <TextBlock Text="{Binding Cliente}" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- DataGrid com produtos do pedido -->
+        <DataGrid ItemsSource="{Binding Itens}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Produto" Binding="{Binding ProdutoNome}" Width="*"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" Width="100"/>
+                <DataGridTextColumn Header="Preço Unitário" Binding="{Binding ValorUnitario, StringFormat={}{0:N2}}" Width="120"/>
+                <DataGridTextColumn Header="Total" Binding="{Binding Total, StringFormat={}{0:N2}}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Botão fechar -->
+        <Button Content="Fechar" DockPanel.Dock="Bottom" Width="80" Height="30" HorizontalAlignment="Right"
+                Margin="0,8,0,0" Command="{Binding FecharCommand}"/>
+    </DockPanel>
+</Window>
