@@ -1,11 +1,12 @@
 using CrudPedidos.Models;
 using CrudPedidos.Services;
 using CrudPedidos.Views;
+using System;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using CrudPedidos.Views;
+
 
 namespace CrudPedidos.ViewModels
 {
@@ -23,6 +24,7 @@ namespace CrudPedidos.ViewModels
         public ICommand IncluirCommand { get; }
         public ICommand EditarCommand { get; }
         public ICommand AtualizarCommand { get; }
+        public ICommand ExcluirCommand { get; }
         public ICommand DetalharCommand { get; }
 
         public PedidoListViewModel(PedidoService service, PessoaService pessoaService, ProdutoService produtoService, Pessoa pessoa = null)
@@ -35,6 +37,7 @@ namespace CrudPedidos.ViewModels
             IncluirCommand = new RelayCommand(_ => Incluir());
             EditarCommand = new RelayCommand(_ => Editar(), _ => Selected != null && Selected.Status != StatusPedido.Recebido);
             DetalharCommand = new RelayCommand(DetalharPedido, o => Selected != null);
+            ExcluirCommand = new RelayCommand(_ => Excluir());
             AtualizarCommand = new RelayCommand(_ => Carregar());
 
             Carregar();
@@ -96,5 +99,28 @@ namespace CrudPedidos.ViewModels
             detalheWindow.ShowDialog();
         }
 
+        private void Excluir()
+        {
+            if (Selected == null) return;
+
+            var result = MessageBox.Show($"Deseja realmente excluir este pedido?",
+                                         "Confirmação", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result != MessageBoxResult.Yes)
+                return;
+
+            try
+            {
+                _service.Excluir(Selected.Id);
+
+                Carregar();
+
+                MessageBox.Show("Pedido excluído com sucesso.", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao excluir", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
     }
 }
