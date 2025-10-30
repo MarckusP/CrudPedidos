@@ -6,6 +6,7 @@
     "Status": "A",
     "Valor": 51.97,
     "StatusDescricao": "Ativo"
+<<<<<<< HEAD
   },
   {
     "Id": 2,
@@ -14,5 +15,7 @@
     "Status": "A",
     "Valor": 450.0,
     "StatusDescricao": "Ativo"
+=======
+>>>>>>> ba38950b50a0706e0f01393cb7a56d3e2f2e07b2
   }
 ]

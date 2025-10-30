@@ -5,6 +5,7 @@
     "Cpf": "61852629320",
     "Status": "A",
     "StatusDescricao": "Ativo"
+<<<<<<< HEAD
   },
   {
     "Id": 2,
@@ -12,5 +13,7 @@
     "Cpf": "49449929041",
     "Status": "A",
     "StatusDescricao": "Ativo"
+=======
+>>>>>>> ba38950b50a0706e0f01393cb7a56d3e2f2e07b2
   }
 ]
