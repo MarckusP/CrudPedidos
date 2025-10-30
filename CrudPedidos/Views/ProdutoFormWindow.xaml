@@ -13,15 +13,12 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-		<TextBlock Text="ID:" VerticalAlignment="Center" Margin="0,0,8,8" />
-		<TextBox Grid.Column="1" IsReadOnly="True" Margin="0,0,0,8" Text="{Binding Id}" />
-
-		<TextBlock Grid.Row="1" Text="Nome:" VerticalAlignment="Center" Margin="0,0,8,8" />
+        <TextBlock Grid.Row="1" Text="Nome:" VerticalAlignment="Center" Margin="0,0,8,8" />
 		<TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,8" Text="{Binding Nome, UpdateSourceTrigger=PropertyChanged}" />
 
 		<TextBlock Grid.Row="2" Text="Código:" VerticalAlignment="Center" Margin="0,0,8,8" />

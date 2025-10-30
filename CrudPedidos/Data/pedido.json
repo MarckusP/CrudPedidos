@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "PessoaId": 1,
+    "PessoaNome": "Perfil teste",
+    "DataVenda": "2025-10-30T11:28:24.6404029-03:00",
+    "FormaPagamento": 0,
+    "Status": 3,
+    "Itens": [
+      {
+        "Quantidade": 1,
+        "ValorUnitario": 51.97,
+        "ProdutoId": 1,
+        "ProdutoNome": "Oculos",
+        "ProdutoCodigo": "10",
+        "ValorTotal": 51.97
+      }
+    ],
+    "ValorTotal": 51.97,
+    "StatusDisponiveis": [
+      3
+    ]
+  }
+]

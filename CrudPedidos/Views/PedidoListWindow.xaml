@@ -34,11 +34,10 @@
             <TextBox Width="180" Text="{Binding FiltroPessoa, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,12,0"/>
 
             <TextBlock Text="Status:" VerticalAlignment="Center" Margin="0,0,6,0"/>
-            <ComboBox Width="120" SelectedValue="{Binding FiltroStatus, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" Margin="0,0,12,0">
-                <ComboBoxItem Content="Todos"/>
-                <ComboBoxItem Content="Ativo"/>
-                <ComboBoxItem Content="Inativo"/>
-            </ComboBox>
+            <ComboBox Width="120"
+                      ItemsSource="{Binding Source={StaticResource StatusPedidoEnum}}"
+                      SelectedItem="{Binding FiltroStatus, Mode=TwoWay}"
+                      Margin="0,0,12,0"/>
 
             <Button Content="Filtrar" Width="80" Margin="0,0,6,0" Command="{Binding FiltrarCommand}" />
             <Button Content="Limpar" Width="80" Command="{Binding LimparCommand}" />

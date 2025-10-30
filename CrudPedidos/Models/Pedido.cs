@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Linq;
 
 namespace CrudPedidos.Models
@@ -20,14 +21,47 @@ namespace CrudPedidos.Models
         Recebido
     }
 
-    public class PedidoItem
+    public class PedidoItem : INotifyPropertyChanged
     {
+        private int _quantidade;
+        public int Quantidade
+        {
+            get => _quantidade;
+            set
+            {
+                if (_quantidade != value)
+                {
+                    _quantidade = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(ValorTotal)); // atualiza o total automaticamente
+                }
+            }
+        }
+
+        private decimal _valorUnitario;
+        public decimal ValorUnitario
+        {
+            get => _valorUnitario;
+            set
+            {
+                if (_valorUnitario != value)
+                {
+                    _valorUnitario = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(ValorTotal));
+                }
+            }
+        }
+
         public int ProdutoId { get; set; }
         public string ProdutoNome { get; set; }
         public string ProdutoCodigo { get; set; }
-        public decimal ValorUnitario { get; set; }
-        public int Quantidade { get; set; }
+
         public decimal ValorTotal => ValorUnitario * Quantidade;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 
     public class Pedido : INotifyPropertyChanged

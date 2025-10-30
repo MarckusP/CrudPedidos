@@ -1,9 +1,10 @@
 [
   {
     "Id": 1,
-    "Nome": "Perfil teste",
-    "Cpf": "61852629320",
+    "Nome": "Oculos",
+    "Codigo": "10",
     "Status": "A",
+    "Valor": 51.97,
     "StatusDescricao": "Ativo"
   }
 ]

@@ -66,7 +66,13 @@
     <Style TargetType="DataGrid">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="AlternatingRowBackground" Value="#FFF0F0F0"/>
-        <Setter Property="GridLinesVisibility" Value="None"/>
+        <!-- Cor clara para alternadas -->
+        <Setter Property="RowBackground" Value="White"/>
+        <!-- Cor padrão das linhas -->
+        <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+        <!-- Mostra só linhas horizontais -->
+        <Setter Property="HorizontalGridLinesBrush" Value="#FFCCCCCC"/>
+        <Setter Property="VerticalGridLinesBrush" Value="#FFCCCCCC"/>
         <Setter Property="HeadersVisibility" Value="Column"/>
         <Setter Property="RowHeight" Value="30"/>
         <Setter Property="ColumnHeaderHeight" Value="32"/>
@@ -83,8 +89,10 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Background" Value="#FF4CAF50"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="4"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <!-- Alinha o texto à esquerda -->
+        <Setter Property="Padding" Value="8,0,4,0"/>
+        <!-- Um pouco de padding para não colar na borda -->
     </Style>
 
     <!-- TextBox padronizado -->

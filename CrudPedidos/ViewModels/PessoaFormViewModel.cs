@@ -45,9 +45,37 @@ namespace CrudPedidos.ViewModels
 
 		private void ExecuteSalvar()
 		{
+			// Validação do Nome
+			if (string.IsNullOrWhiteSpace(Nome))
+			{
+				System.Windows.MessageBox.Show(
+					"O campo Nome é obrigatório.",
+					"Atenção",
+					System.Windows.MessageBoxButton.OK,
+					System.Windows.MessageBoxImage.Warning
+				);
+				return;
+			}
+
+			// Validação opcional do CPF
+			if (!string.IsNullOrWhiteSpace(Cpf) && !Pessoa.ValidarCpf(Pessoa.SomenteNumeros(Cpf)))
+			{
+				System.Windows.MessageBox.Show(
+					"CPF inválido.",
+					"Atenção",
+					System.Windows.MessageBoxButton.OK,
+					System.Windows.MessageBoxImage.Warning
+				);
+				return;
+			}
+
+			// Cria o objeto Pessoa, agora que os dados estão validados
 			var p = new Pessoa(Id, Nome, Pessoa.SomenteNumeros(Cpf ?? string.Empty));
-			// se não lançar, está válido
-			Cpf = p.Cpf; // normaliza sem máscara
+
+			// Normaliza o CPF
+			Cpf = p.Cpf;
+
+			// Dispara evento Saved
 			Saved?.Invoke(this, EventArgs.Empty);
 		}
 
