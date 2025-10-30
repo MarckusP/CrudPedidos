@@ -105,8 +105,8 @@ Em todas as telas:
  ┣ 📂 Models
  ┣ 📂 ViewModels
  ┣ 📂 Views
- ┣ 📂 Repositories
- ┣ 📂 Utils
+ ┣ 📂 Resources
+ ┣ 📂 Services
  ┗ 📄 README.md
 ```
 
