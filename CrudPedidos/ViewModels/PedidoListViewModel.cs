@@ -48,9 +48,10 @@ namespace CrudPedidos.ViewModels
             EditarCommand = new RelayCommand(_ => Editar(), _ => Selected != null && Selected.Status != StatusPedido.Recebido);
             DetalharCommand = new RelayCommand(DetalharPedido, o => Selected != null);
             ExcluirCommand = new RelayCommand(_ => Excluir());
-
+<<<<<<< HEAD
             FiltrarCommand = new RelayCommand(_ => Filtrar());
-
+=======
+>>>>>>> ba38950b50a0706e0f01393cb7a56d3e2f2e07b2
             AtualizarCommand = new RelayCommand(_ => Carregar());
             LimparCommand = new RelayCommand(() =>
             {
@@ -152,5 +153,9 @@ namespace CrudPedidos.ViewModels
                 MessageBox.Show(ex.Message, "Erro ao excluir", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ba38950b50a0706e0f01393cb7a56d3e2f2e07b2
     }
 }
