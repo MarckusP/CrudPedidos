@@ -1,23 +1,22 @@
-<<<<<<< HEAD
 [
   {
     "Id": 1,
     "PessoaId": 1,
-    "PessoaNome": "Perfil teste",
-    "DataVenda": "2025-10-30T11:28:24.6404029-03:00",
+    "PessoaNome": "Cliente 1",
+    "DataVenda": "2025-10-30T15:07:58.6042767-03:00",
     "FormaPagamento": 0,
     "Status": 3,
     "Itens": [
       {
         "Quantidade": 1,
-        "ValorUnitario": 51.97,
+        "ValorUnitario": 2.5,
         "ProdutoId": 1,
-        "ProdutoNome": "Oculos",
+        "ProdutoNome": "Cabo Cath6",
         "ProdutoCodigo": "10",
-        "ValorTotal": 51.97
+        "ValorTotal": 2.5
       }
     ],
-    "ValorTotal": 51.97,
+    "ValorTotal": 2.5,
     "StatusDisponiveis": [
       3
     ]
@@ -25,35 +24,39 @@
   {
     "Id": 2,
     "PessoaId": 2,
-    "PessoaNome": "Magnata",
-    "DataVenda": "2025-10-30T13:47:07.8716791-03:00",
+    "PessoaNome": "Cliente 2",
+    "DataVenda": "2025-10-30T15:11:54.1446123-03:00",
     "FormaPagamento": 0,
-    "Status": 0,
+    "Status": 3,
     "Itens": [
       {
-        "Quantidade": 2,
-        "ValorUnitario": 450.0,
-        "ProdutoId": 2,
-        "ProdutoNome": "Lente",
-        "ProdutoCodigo": "20",
-        "ValorTotal": 900.0
+        "Quantidade": 6,
+        "ValorUnitario": 2.5,
+        "ProdutoId": 1,
+        "ProdutoNome": "Cabo Cath6",
+        "ProdutoCodigo": "10",
+        "ValorTotal": 15.0
       },
       {
         "Quantidade": 1,
-        "ValorUnitario": 51.97,
-        "ProdutoId": 1,
-        "ProdutoNome": "Oculos",
-        "ProdutoCodigo": "10",
-        "ValorTotal": 51.97
+        "ValorUnitario": 10.0,
+        "ProdutoId": 2,
+        "ProdutoNome": "RJ45",
+        "ProdutoCodigo": "20",
+        "ValorTotal": 10.0
+      },
+      {
+        "Quantidade": 1,
+        "ValorUnitario": 25.5,
+        "ProdutoId": 3,
+        "ProdutoNome": "FILTRO DE LINHA",
+        "ProdutoCodigo": "30",
+        "ValorTotal": 25.5
       }
     ],
-    "ValorTotal": 951.97,
+    "ValorTotal": 50.5,
     "StatusDisponiveis": [
-      0,
-      1
+      3
     ]
   }
 ]
-=======
-[]
->>>>>>> ba38950b50a0706e0f01393cb7a56d3e2f2e07b2

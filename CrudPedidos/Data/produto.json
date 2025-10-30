@@ -1,21 +1,26 @@
 [
   {
     "Id": 1,
-    "Nome": "Oculos",
+    "Nome": "Cabo Cath6",
     "Codigo": "10",
     "Status": "A",
-    "Valor": 51.97,
+    "Valor": 2.5,
     "StatusDescricao": "Ativo"
-<<<<<<< HEAD
   },
   {
     "Id": 2,
-    "Nome": "Lente",
+    "Nome": "RJ45",
     "Codigo": "20",
     "Status": "A",
-    "Valor": 450.0,
+    "Valor": 10.0,
     "StatusDescricao": "Ativo"
-=======
->>>>>>> ba38950b50a0706e0f01393cb7a56d3e2f2e07b2
+  },
+  {
+    "Id": 3,
+    "Nome": "FILTRO DE LINHA",
+    "Codigo": "30",
+    "Status": "A",
+    "Valor": 25.5,
+    "StatusDescricao": "Ativo"
   }
 ]

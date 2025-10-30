@@ -15,8 +15,6 @@ namespace CrudPedidos.Services
         public PessoaService(string path = null)
         {
             var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-
-            // Volta até a raiz do projeto (saindo de bin/Debug/net4.6/)
             var projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\..\"));
 
             _jsonPath = string.IsNullOrWhiteSpace(path)
